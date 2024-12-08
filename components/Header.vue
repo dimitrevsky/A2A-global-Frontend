@@ -6,7 +6,8 @@ import Button from "./UI/Button.vue";
 
 <template>
   <header class="header">
-    <div class="header__logo">A2A.Global</div>
+    <div class="header__logo"><img src="/assets/img/Logo.svg" alt="Logo">
+    </div>
 
     <Navigation />
 
@@ -21,14 +22,18 @@ import Button from "./UI/Button.vue";
 
 <style scoped>
 .header {
+  position: sticky;
+  top: 0;
   width: 100%;
   padding: 24px 64px;
   font-size: 24px;
   display: flex;
   gap: 22px;
+  background-color: var(--web-site-background);
   justify-content: space-between;
   align-items: center;
   line-height: 21.6px;
+  z-index: 1;
 }
 
 .header__logo {
@@ -63,7 +68,7 @@ import Button from "./UI/Button.vue";
   }
 
   .header {
-    padding: 16px 16px;
+    padding: 16px;
   }
 
   .header__btn {

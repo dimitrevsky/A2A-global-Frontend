@@ -32,8 +32,8 @@ const closeMenu = () => {
 
 <style scoped>
 .hamburger-button {
-  right: 20px;
   background: transparent;
+  right: 20px;
   border: none;
   cursor: pointer;
   z-index: 1001;
@@ -70,7 +70,7 @@ const closeMenu = () => {
 
 .sidebar {
   position: fixed;
-  top: 53px;
+  top: 93px;
   right: 0;
   width: 100%;
   height: 100%;

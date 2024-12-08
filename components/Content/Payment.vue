@@ -4,8 +4,10 @@ import Button from "../UI/Button.vue";
 
 <template>
   <div class="main__payment">
-    <div class="main__payment__img">
-      <!-- <img src="" alt=""> -->
+    <div class="main__payment__wrapper__vid">
+      <video class="main__payment__vid" playsinline autoplay muted loop>
+        <source src="/assets/video/animation1.mp4" />
+      </video>
     </div>
     <div class="main__payment__info">
       <div class="text-general-style title">
@@ -14,8 +16,7 @@ import Button from "../UI/Button.vue";
         No hassle!
       </div>
       <div class="text-general-style text">Accept payments from anywhere in the world with just one click.</div>
-
-      <div class="btn_position">
+      <div>
         <Button class="main__payment__btn" />
       </div>
     </div>
@@ -24,20 +25,30 @@ import Button from "../UI/Button.vue";
 
 <style scoped>
 .main__payment {
+  position: relative;
   max-width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
   gap: 40px;
 }
 
-.main__payment__img {
-  min-width: 100%;
+.main__payment__wrapper__vid {
+  max-width: 100%;
+  position: relative;
+  max-width: 100%;
   height: 555px;
-  background-image: url("../../assets/img/ContentBack.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+
+  overflow: hidden;
+}
+
+.main__payment__vid {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   border-radius: 24px;
+  transform: translate(-50%, -50%);
 }
 
 .title {
@@ -47,8 +58,8 @@ import Button from "../UI/Button.vue";
 }
 
 .text {
-  font-weight: 400;
   font-size: calc(16px + (4 + 4 * 0.7) * (100vw - 375px) / 1920);
+  font-weight: 400;
   margin-bottom: 40px;
 }
 
@@ -65,6 +76,6 @@ import Button from "../UI/Button.vue";
 .main__payment__info {
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
 </style>
