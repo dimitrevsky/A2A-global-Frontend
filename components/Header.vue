@@ -53,11 +53,6 @@ import Button from "./UI/Button.vue";
   background-color: rgba(13, 114, 255, 0.4);
 }
 
-.header__btn:active {
-  color: #00d9ff;
-  box-shadow: 0 0 19px #00d9ff85;
-}
-
 .header__sidebar {
   display: none;
 }

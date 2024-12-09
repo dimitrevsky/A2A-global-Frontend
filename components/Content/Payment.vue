@@ -5,7 +5,7 @@ import Button from "../UI/Button.vue";
 <template>
   <div class="main__payment">
     <div class="main__payment__wrapper__vid">
-      <video class="main__payment__vid" playsinline autoplay muted loop>
+      <video  height="555px" class="main__payment__vid" playsinline autoplay muted loop>
         <source src="/assets/video/animation1.mp4" />
       </video>
     </div>
@@ -30,24 +30,21 @@ import Button from "../UI/Button.vue";
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
   gap: 40px;
 }
 
 .main__payment__wrapper__vid {
-  max-width: 100%;
   position: relative;
   max-width: 100%;
-  height: 555px;
-
+  height: 544px;
   overflow: hidden;
+  border-radius: 24px;
 }
 
 .main__payment__vid {
   position: absolute;
   left: 50%;
   top: 50%;
-  border-radius: 24px;
   transform: translate(-50%, -50%);
 }
 
