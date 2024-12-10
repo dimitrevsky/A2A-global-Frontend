@@ -5,7 +5,7 @@ import Button from "../UI/Button.vue";
 <template>
   <div class="main__payment">
     <div class="main__payment__wrapper__vid">
-      <video  height="555px" class="main__payment__vid" playsinline autoplay muted loop>
+      <video width="auto" height="100%" class="main__payment__vid" playsinline autoplay muted loop>
         <source src="/assets/video/animation1.mp4" />
       </video>
     </div>
@@ -46,6 +46,7 @@ import Button from "../UI/Button.vue";
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 24px;
 }
 
 .title {

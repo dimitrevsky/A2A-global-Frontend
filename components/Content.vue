@@ -2,10 +2,13 @@
   <main class="main">
     <ContentPayment />
     <ContentSavingsForClients />
+    <BenefitsForBusinesses />
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+import BenefitsForBusinesses from './Content/BenefitsForBusinesses.vue';
+</script>
 
 <style scoped>
 .main {
