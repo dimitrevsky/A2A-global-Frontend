@@ -6,8 +6,7 @@ import Button from "./UI/Button.vue";
 
 <template>
   <header class="header">
-    <div class="header__logo"><img src="/assets/img/Logo.svg" alt="Logo">
-    </div>
+    <div class="header__logo"><img src="/assets/img/Logo.svg" alt="Logo" /></div>
 
     <Navigation />
 
@@ -29,11 +28,11 @@ import Button from "./UI/Button.vue";
   font-size: 24px;
   display: flex;
   gap: 22px;
-  background-color: var(--web-site-background);
+  background-color: #fff;
   justify-content: space-between;
   align-items: center;
   line-height: 21.6px;
-  z-index: 1;
+  z-index: 100;
 }
 
 .header__logo {

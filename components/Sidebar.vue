@@ -47,7 +47,7 @@ const closeMenu = () => {
   height: 3px;
   margin: 4px 0;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: #000000;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -74,7 +74,7 @@ const closeMenu = () => {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--web-site-background);
+  background-color:  #fff;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -90,7 +90,7 @@ const closeMenu = () => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 

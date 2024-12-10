@@ -1,13 +1,22 @@
 <template>
   <main class="main">
-    <ContentPayment />
-    <ContentSavingsForClients />
+    <Payment />
+    <SavingsForClients />
     <BenefitsForBusinesses />
+    <BenefitsForPayers />
+    <Form />
+    <FAQ />
+    <footer>A2A.Global All rights reserved 2024(с)</footer>
   </main>
 </template>
 
 <script setup>
-import BenefitsForBusinesses from './Content/BenefitsForBusinesses.vue';
+import BenefitsForBusinesses from "./Content/BenefitsForBusinesses.vue";
+import BenefitsForPayers from "./Content/BenefitsForPayers.vue";
+import FAQ from "./Content/FAQ.vue";
+import SavingsForClients from "./Content/SavingsForClients.vue";
+import Form from "./Content/Form.vue";
+import Payment from "./Content/Payment.vue";
 </script>
 
 <style scoped>
@@ -20,5 +29,9 @@ import BenefitsForBusinesses from './Content/BenefitsForBusinesses.vue';
   grid-template-columns: repeat(1, 1fr);
   justify-content: center;
   gap: calc(100px + 3vw);
+}
+
+footer {
+  text-align: center;
 }
 </style>
