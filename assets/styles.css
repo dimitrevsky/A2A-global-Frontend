@@ -6,9 +6,13 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --section-gap: 200px;
-  --text-color: #000000;
+  --text-color: #1b1b1b;
   --conteiner-background-color: #f2f2f2;
 }
 
@@ -22,6 +26,7 @@ main {
   margin: auto;
 }
 
-.text-general-style {
-  text-align: center;
+.header__btn {
+  color: #0d72ff;
 }
+

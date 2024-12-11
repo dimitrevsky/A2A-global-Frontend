@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="FAQ">
     <div class="faq__title">
       <h1 class="faq__title-text">Frequently asked questions</h1>
     </div>
@@ -53,11 +53,20 @@
 
 .accordion__content-body > p {
   margin-top: 20px;
+  color: #656565;
+  letter-spacing: -0.5px;
+  font-weight: 300;
 }
 
 .accordion__item[open] + .accordion__content {
   grid-template-rows: 1fr;
   margin-bottom: 20px;
+}
+
+.accordion__summary-title {
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  font-size: calc(18px + (16 + 16 * 0.7) * (100vw - 375px) / 1920);
 }
 
 details {
@@ -69,18 +78,17 @@ summary {
   cursor: pointer;
 }
 
-details summary::before {
+details > summary::before {
   content: "›";
-  font-size: 24px;
-  transform: rotate(180deg);
+  font-size: calc(18px + (16 + 16 * 0.7) * (100vw - 375px) / 1920);
+  transform: rotate(90deg);
+  line-height: 100%;
   position: absolute;
   right: 0;
-  top: -3px;
-  transition: all 0.1s ease-in;
+  transition: all 0.2s ease-in-out;
 }
 
-details[open] summary::before {
-  content: "›";
-  rotate: -90deg;
+details[open] > summary::before {
+  transform: rotate(270deg);
 }
 </style>

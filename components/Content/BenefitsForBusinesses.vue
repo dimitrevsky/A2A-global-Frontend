@@ -1,5 +1,5 @@
 <template>
-  <section class="benefits__businesses">
+  <section class="benefits__businesses" id="BenefitsForBusinesses">
     <div class="benefits__businesses-title">
       <p class="benefits__businesses-title-text">Benefits for businesses</p>
     </div>
@@ -25,15 +25,22 @@
 </template>
 
 <style scoped>
+.benefits__businesses {
+  padding: 16px;
+}
+
 .benefits__businesses-title {
   font-size: calc(28px + (20 + 20 * 0.7) * (100vw - 375px) / 1920);
   text-align: center;
   margin-bottom: 1em;
+  letter-spacing: -1px;
+  font-weight: 500;
+  line-height: 100%;
 }
 
 .benefits__businesses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(364px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(359px, 1fr));
   gap: calc(5px + 0.1vw);
 }
 
@@ -51,21 +58,36 @@
   color: #fff;
 }
 
+.benefits__businesses-item:nth-child(1) > p {
+  background-color: #0d72ff;
+  color: #fff;
+}
+
 .benefits__businesses-item-value {
   font-size: calc(24px + (16 + 16 * 0.7) * (100vw - 375px) / 1920);
   margin-bottom: 0.7em;
+  letter-spacing: -1px;
+  font-weight: 500;
+  line-height: 100%;
 }
 
 .benefits__businesses-item-description {
   font-size: calc(16px + (4 + 4 * 0.7) * (100vw - 375px) / 1920);
+  line-height: 140%;
+  color: #1b1b1b;
 }
-
 @media (max-width: 729px) {
   .benefits__businesses-grid {
     gap: calc(2px + 0.5vw);
   }
   .benefits__businesses-item {
     padding: 3vw;
+  }
+}
+
+@media (max-width: 411px) {
+  .benefits__businesses-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 </style>

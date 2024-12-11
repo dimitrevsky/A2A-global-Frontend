@@ -47,7 +47,6 @@ import Button from "./UI/Button.vue";
   user-select: none;
 }
 .header__btn {
-  color: #0d72ff;
   background-color: rgba(13, 114, 255, 0.15);
   padding: 16px 56px;
   transition: all 0.1s ease-in-out;
@@ -63,7 +62,8 @@ import Button from "./UI/Button.vue";
   display: none;
 }
 
-@media (max-width: 1258px) {
+
+@media (max-width: 1058px) {
   .header__nav {
     display: none;
   }

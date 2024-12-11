@@ -1,5 +1,5 @@
 <template>
-  <section class="benefits__payers">
+  <section class="benefits__payers" id="BenefitsForPayers">
     <div class="benefits__payers-title">
       <p class="benefits__payers-title-text">Benefits for payers</p>
     </div>
@@ -25,15 +25,22 @@
 </template>
 
 <style scoped>
+.benefits__payers {
+  padding: 16px;
+}
+
 .benefits__payers-title {
   font-size: calc(28px + (20 + 20 * 0.7) * (100vw - 375px) / 1920);
   text-align: center;
   margin-bottom: 1em;
+  letter-spacing: -1px;
+  font-weight: 500;
+  line-height: 100%;
 }
 
 .benefits__payers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(364px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(359px, 1fr));
   gap: calc(5px + 0.1vw);
 }
 
@@ -55,12 +62,29 @@
   font-size: calc(16px + (4 + 4 * 0.7) * (100vw - 375px) / 1920);
 }
 
+.benefits__payers-item-value {
+  letter-spacing: -1px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.benefits__payers-item-description {
+  line-height: 140%;
+  color: #1b1b1b;
+}
+
 @media (max-width: 729px) {
   .benefits__payers-grid {
     gap: calc(2px + 0.5vw);
   }
   .benefits__payers-item {
     padding: 3vw;
+  }
+}
+
+@media (max-width: 411px) {
+  .benefits__payers-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 </style>

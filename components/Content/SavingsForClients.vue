@@ -69,6 +69,10 @@ onMounted(() => {
 .savings__title {
   max-width: 100%;
   margin-bottom: calc(24px + 1vw);
+  font-size: calc(21.35937px + 1.77083vw);
+  letter-spacing: -1px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .savings__title > p {
@@ -80,6 +84,9 @@ onMounted(() => {
 .savings__money-display {
   display: flex;
   justify-content: center;
+  letter-spacing: -3px;
+  font-weight: 700;
+  line-height: 90%;
   color: #000;
   overflow: hidden;
   gap: 8px;
@@ -172,7 +179,7 @@ onMounted(() => {
 @media (max-width: 375px) {
   .savings__digit-container {
     border-radius: 12px;
-    width: 31px;
+    width: 28px;
     height: 49px;
   }
 }

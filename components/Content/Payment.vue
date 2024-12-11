@@ -6,14 +6,12 @@
       </video>
     </div>
     <div class="payment__info">
-      <div class="payment__info__title text-general-style">
+      <div class="payment__info__title">
         Instant payments <br />
         From account to account <br />
         No hassle!
       </div>
-      <div class="payment__info__text text-general-style">
-        Accept payments from anywhere in the world with just one click.
-      </div>
+      <div class="payment__info__text">Accept payments from anywhere in the world with just one click.</div>
       <div>
         <Button class="payment__button" />
       </div>
@@ -52,9 +50,13 @@ import Button from "../UI/Button.vue";
 }
 
 .payment__info__title {
-  font-size: calc(28px + (28 + 28 * 0.7) * (100vw - 375px) / 1920);
-  letter-spacing: -2px;
+  font-size: calc(18.70313px + 2.47917vw);
+  letter-spacing: -1px;
   margin-bottom: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .payment__info__text {

@@ -1,5 +1,5 @@
 <template>
-  <section class="main__form-wrapper">
+  <section class="main__form-wrapper" id="Form">
     <div>
       <h1>Future of payments happening now</h1>
       <p>Fill in the form to join the A2A.Global community and our founders will contact you</p>
@@ -20,7 +20,7 @@
         <div class="main__form__input-group">
           <input
             type="tel"
-            placeholder="Введите номер телефона"
+            placeholder="Phone number"
             v-model="phoneNumber"
             @input="onInputChange('phoneNumber')"
             :class="{ 'input-invalid': isPhoneNumberValid === false }"
@@ -97,7 +97,6 @@ const handleSubmit = (event) => {
   margin: 0 auto;
   gap: 20px;
   text-align: center;
-  max-width: 718px;
 }
 
 .main__form-wrapper > div > h1 {
@@ -105,6 +104,7 @@ const handleSubmit = (event) => {
   text-align: center;
   margin-bottom: 16px;
   font-weight: 600;
+  letter-spacing: -1px;
 }
 
 .main__form-wrapper > div > p {
@@ -116,6 +116,7 @@ const handleSubmit = (event) => {
   flex-direction: column;
   max-width: 718px;
   gap: 16px;
+  margin: 0 auto;
 }
 
 .main__form__input-group {

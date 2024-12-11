@@ -7,8 +7,8 @@
     </button>
     <div class="sidebar" :class="{ 'is-open': isOpen }">
       <div class="sidebar-content" :style="{ opacity: isOpen ? 1 : 0 }">
-        <Navigation />
-        <Button class="header__btn" />
+        <Navigation @closeMenu="closeMenu" />
+        <Button @closeMenu="closeMenu" class="header__btn" />
       </div>
     </div>
   </div>
@@ -38,7 +38,6 @@ const closeMenu = () => {
   cursor: pointer;
   z-index: 1001;
   transition: transform 0.3s ease-in-out;
-
 }
 
 .bar {
@@ -63,7 +62,6 @@ const closeMenu = () => {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
 .header__nav {
   flex-direction: column;
 }
@@ -74,7 +72,7 @@ const closeMenu = () => {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color:  #fff;
+  background-color: #fff;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
