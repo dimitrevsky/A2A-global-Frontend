@@ -6,7 +6,7 @@
     <BenefitsForPayers />
     <Form />
     <FAQ />
-    <footer>A2A.Global All rights reserved 2024(с)</footer>
+    <footer class="main__footer">A2A.Global All rights reserved 2024(с)</footer>
   </main>
 </template>
 
@@ -31,7 +31,7 @@ import Payment from "./Content/Payment.vue";
   gap: calc(100px + 3vw);
 }
 
-footer {
+.main__footer {
   text-align: center;
 }
 </style>

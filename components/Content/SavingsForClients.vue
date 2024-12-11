@@ -1,15 +1,15 @@
 <template>
-  <section>
-    <div class="title">
+  <section class="savings">
+    <div class="savings__title">
       <p>Cumulative savings for our clients as of today</p>
     </div>
-    <div class="main__money-display">
-      <div class="digit-container">
-        <span class="position_center"> $ </span>
+    <div class="savings__money-display">
+      <div class="savings__digit-container">
+        <span class="savings__position-center"> $ </span>
       </div>
-      <div v-for="(digit, index) in moneyDigits" :key="index" class="main__money-display_container">
-        <div class="digit-container" :class="{ 'animate-change': isAnimating[index] }">
-          <div class="position_center">
+      <div v-for="(digit, index) in moneyDigits" :key="index" class="savings__money-display__container">
+        <div class="savings__digit-container" :class="{ 'savings__digit-container--animate': isAnimating[index] }">
+          <div class="savings__position-center">
             {{ digit }}
           </div>
         </div>
@@ -59,16 +59,33 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.main__money-display {
+.savings {
   display: flex;
-  justify-self: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 100%;
+}
+
+.savings__title {
+  max-width: 100%;
+  margin-bottom: calc(24px + 1vw);
+}
+
+.savings__title > p {
+  text-align: center;
+  font-size: calc(28px + (20 + 20 * 0.7) * (100vw - 375px) / 1920);
+  letter-spacing: -2px;
+}
+
+.savings__money-display {
+  display: flex;
+  justify-content: center;
   color: #000;
   overflow: hidden;
   gap: 8px;
 }
 
-.digit-container {
+.savings__digit-container {
   width: 91px;
   height: 91px;
   display: flex;
@@ -81,33 +98,23 @@ onMounted(() => {
   position: relative;
 }
 
-.main__money-display_container:nth-child(3n) {
+.savings__money-display__container:nth-child(3n) {
   margin-right: 32px;
 }
-.main__money-display_container:nth-child(1) {
+
+.savings__money-display__container:nth-child(1) {
   margin-left: 32px;
 }
 
-.digit-container.animate-change {
+.savings__digit-container--animate {
   animation: slideUp 0.2s ease-in-out forwards;
 }
 
-.position_center {
+.savings__position-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.title {
-  max-width: 100%;
-  margin-bottom: calc(24px + 1vw);
-}
-
-.title > p {
-  text-align: center;
-  font-size: calc(28px + (20 + 20 * 0.7) * (100vw - 375px) / 1920);
-  letter-spacing: -2px;
 }
 
 @keyframes slideUp {
@@ -122,48 +129,48 @@ onMounted(() => {
 }
 
 @media (max-width: 1014px) {
-  .main__money-display {
+  .savings__money-display {
     gap: 5px;
     margin-left: 16px;
   }
 
-  .digit-container {
+  .savings__digit-container {
     width: 61px;
     height: 91px;
   }
 
-  .main__money-display > .main__money-display_container:nth-child(3n) {
+  .savings__money-display > .savings__money-display__container:nth-child(3n) {
     margin-right: 16px;
   }
 }
 
 @media (max-width: 644px) {
-  .main__money-display {
+  .savings__money-display {
     gap: 2px;
   }
 
-  .digit-container {
+  .savings__digit-container {
     width: 51px;
     height: 91px;
   }
 }
 
 @media (max-width: 536px) {
-  .digit-container {
+  .savings__digit-container {
     width: 36px;
     height: 61px;
   }
 }
 
 @media (max-width: 426px) {
-  .digit-container {
+  .savings__digit-container {
     width: 33px;
     height: 61px;
   }
 }
 
 @media (max-width: 375px) {
-  .digit-container {
+  .savings__digit-container {
     border-radius: 12px;
     width: 31px;
     height: 49px;

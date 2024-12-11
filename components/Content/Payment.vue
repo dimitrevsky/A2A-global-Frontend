@@ -1,30 +1,32 @@
-<script setup>
-import Button from "../UI/Button.vue";
-</script>
-
 <template>
-  <div class="main__payment">
-    <div class="main__payment__wrapper__vid">
-      <video width="auto" height="100%" class="main__payment__vid" playsinline autoplay muted loop>
+  <div class="payment">
+    <div class="payment__video-wrapper">
+      <video width="auto" height="100%" class="payment__video" playsinline autoplay muted loop>
         <source src="/assets/video/animation1.mp4" />
       </video>
     </div>
-    <div class="main__payment__info">
-      <div class="text-general-style title">
+    <div class="payment__info">
+      <div class="payment__info__title text-general-style">
         Instant payments <br />
         From account to account <br />
         No hassle!
       </div>
-      <div class="text-general-style text">Accept payments from anywhere in the world with just one click.</div>
+      <div class="payment__info__text text-general-style">
+        Accept payments from anywhere in the world with just one click.
+      </div>
       <div>
-        <Button class="main__payment__btn" />
+        <Button class="payment__button" />
       </div>
     </div>
   </div>
 </template>
 
+<script setup>
+import Button from "../UI/Button.vue";
+</script>
+
 <style scoped>
-.main__payment {
+.payment {
   position: relative;
   max-width: 100%;
   display: flex;
@@ -33,7 +35,7 @@ import Button from "../UI/Button.vue";
   gap: 40px;
 }
 
-.main__payment__wrapper__vid {
+.payment__video-wrapper {
   position: relative;
   max-width: 100%;
   height: 544px;
@@ -41,7 +43,7 @@ import Button from "../UI/Button.vue";
   border-radius: 24px;
 }
 
-.main__payment__vid {
+.payment__video {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -49,19 +51,19 @@ import Button from "../UI/Button.vue";
   border-radius: 24px;
 }
 
-.title {
+.payment__info__title {
   font-size: calc(28px + (28 + 28 * 0.7) * (100vw - 375px) / 1920);
   letter-spacing: -2px;
   margin-bottom: 24px;
 }
 
-.text {
+.payment__info__text {
   font-size: calc(16px + (4 + 4 * 0.7) * (100vw - 375px) / 1920);
   font-weight: 400;
   margin-bottom: 40px;
 }
 
-.main__payment__btn {
+.payment__button {
   color: #ffffff;
   width: 160px;
   background-color: rgb(13, 114, 255);
@@ -71,7 +73,7 @@ import Button from "../UI/Button.vue";
   justify-self: center;
 }
 
-.main__payment__info {
+.payment__info {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="toggleMenu" class="hamburger-button">
+    <button @click="toggleMenu" class="hamburger_button">
       <span :class="['bar', { active: isOpen }]"></span>
       <span :class="['bar', { active: isOpen }]"></span>
       <span :class="['bar', { active: isOpen }]"></span>
@@ -31,7 +31,7 @@ const closeMenu = () => {
 </script>
 
 <style scoped>
-.hamburger-button {
+.hamburger_button {
   background: transparent;
   right: 20px;
   border: none;

@@ -1,13 +1,13 @@
 <template>
   <section>
-    <div class="main__faq__title">
-      <h1>Frequently asked questions</h1>
+    <div class="faq__title">
+      <h1 class="faq__title-text">Frequently asked questions</h1>
     </div>
 
     <div v-for="item in 4" class="accordion">
-      <details class="accordion__details" name="faq">
+      <details class="accordion__item" name="faq">
         <summary class="accordion__summary">
-          <span class="accordion__title" role="term" aria-details="faq-1"> What is A2A.Global? </span>
+          <span class="accordion__summary-title" role="term" aria-details="faq-1"> What is A2A.Global? </span>
         </summary>
       </details>
 
@@ -24,10 +24,8 @@
   </section>
 </template>
 
-<script setup></script>
-
 <style scoped>
-.main__faq__title {
+.faq__title {
   font-size: calc(28px + (20 + 20 * 0.7) * (100vw - 375px) / 1920);
   letter-spacing: -1px;
   font-weight: 600;
@@ -57,12 +55,9 @@
   margin-top: 20px;
 }
 
-.accordion__details[open] + .accordion__content {
+.accordion__item[open] + .accordion__content {
   grid-template-rows: 1fr;
   margin-bottom: 20px;
-}
-
-.accordion__title {
 }
 
 details {

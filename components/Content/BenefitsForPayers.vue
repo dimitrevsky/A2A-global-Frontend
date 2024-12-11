@@ -1,67 +1,65 @@
 <template>
-  <section class="main__benefits__businesses">
-    <div class="main__benefits__businesses_title">
-      <p>Benefits for payers</p>
+  <section class="benefits__payers">
+    <div class="benefits__payers-title">
+      <p class="benefits__payers-title-text">Benefits for payers</p>
     </div>
-    <div class="main__benefits__businesses__grid">
-      <div class="grid__conteiner">
-        <h1>Up tp 10%</h1>
-        <p>LCashback</p>
+    <div class="benefits__payers-grid">
+      <div class="benefits__payers-item">
+        <h1 class="benefits__payers-item-value">Up to 10%</h1>
+        <p class="benefits__payers-item-description">Cashback</p>
       </div>
-      <div class="grid__conteiner">
-        <h1>&lt;0,05%</h1>
-        <p>Higher conversion</p>
+      <div class="benefits__payers-item">
+        <h1 class="benefits__payers-item-value">&lt;0,05%</h1>
+        <p class="benefits__payers-item-description">Higher conversion</p>
       </div>
-      <div class="grid__conteiner">
-        <h1>0</h1>
-        <p>Integration cost</p>
+      <div class="benefits__payers-item">
+        <h1 class="benefits__payers-item-value">0</h1>
+        <p class="benefits__payers-item-description">Integration cost</p>
       </div>
-      <div class="grid__conteiner">
-        <h1>0,001 sec</h1>
-        <p>Instant payments</p>
+      <div class="benefits__payers-item">
+        <h1 class="benefits__payers-item-value">0,001 sec</h1>
+        <p class="benefits__payers-item-description">Instant payments</p>
       </div>
     </div>
   </section>
 </template>
 
-<script setup></script>
-
 <style scoped>
-.main__benefits__businesses_title {
+.benefits__payers-title {
   font-size: calc(28px + (20 + 20 * 0.7) * (100vw - 375px) / 1920);
   text-align: center;
   margin-bottom: 1em;
 }
 
-.main__benefits__businesses__grid {
+.benefits__payers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(364px, 1fr));
   gap: calc(5px + 0.1vw);
 }
 
-.grid__conteiner {
+.benefits__payers-item {
   max-width: 100%;
-  background-color: var(--conteiner-background-color);
+  background-color: #f2f2f2;
   padding: 1.6vw;
   padding-bottom: 40px;
   border-radius: 24px;
   text-wrap: nowrap;
 }
 
-.grid__conteiner > h1 {
+.benefits__payers-item > h1 {
   font-size: calc(24px + (16 + 16 * 0.7) * (100vw - 375px) / 1920);
   margin-bottom: 0.7em;
 }
 
-.grid__conteiner > p {
+.benefits__payers-item > p {
   font-size: calc(16px + (4 + 4 * 0.7) * (100vw - 375px) / 1920);
 }
 
 @media (max-width: 729px) {
-  .main__benefits__businesses__grid {
+  .benefits__payers-grid {
     gap: calc(2px + 0.5vw);
   }
-  .grid__conteiner {
+  .benefits__payers-item {
     padding: 3vw;
   }
 }

@@ -1,14 +1,10 @@
-<script setup>
-import Navigation from "./Navigation.vue";
-import Sidebar from "./Sidebar.vue";
-import Button from "./UI/Button.vue";
-</script>
-
 <template>
   <header class="header">
-    <div class="header__logo"><img src="/assets/img/Logo.svg" alt="Logo" /></div>
+    <div class="header__logo">
+      <img src="/assets/img/Logo.svg" alt="Logo" />
+    </div>
 
-    <Navigation />
+    <Navigation class="header__nav" />
 
     <div>
       <Button class="header__btn" />
@@ -18,6 +14,12 @@ import Button from "./UI/Button.vue";
     </div>
   </header>
 </template>
+
+<script setup>
+import Navigation from "./Navigation.vue";
+import Sidebar from "./Sidebar.vue";
+import Button from "./UI/Button.vue";
+</script>
 
 <style scoped>
 .header {
@@ -37,8 +39,13 @@ import Button from "./UI/Button.vue";
 
 .header__logo {
   font-weight: 800;
+  pointer-events: none;
 }
 
+.header__logo img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
 .header__btn {
   color: #0d72ff;
   background-color: rgba(13, 114, 255, 0.15);
