@@ -33,5 +33,7 @@ import Payment from "./Content/Payment.vue";
 
 .main__footer {
   text-align: center;
+  font-size: calc(18px + (6 + 6 * 0.7) * (100vw - 375px) / 1920);
+  color: #656565;
 }
 </style>

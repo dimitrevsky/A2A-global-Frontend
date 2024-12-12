@@ -33,7 +33,7 @@ button {
   font-size: 24px;
   cursor: pointer;
   font-weight: 600;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 
 a {

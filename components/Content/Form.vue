@@ -37,13 +37,10 @@
             :class="{ 'input-invalid': isOtherInformationValid === false }"
             class="main__form__other-info"
           ></textarea>
-          <p v-if="isSubmitAttempted && isOtherInformationValid === false" class="error-message">
-            Дополнительная информация не может быть пустой
-          </p>
         </div>
 
         <div>
-          <input type="submit" value="Send" class="submit-btn" :class="{ 'submit-btn--error': !isFormValid }" />
+          <input type="submit" value="Send" class="submit-btn" />
         </div>
       </form>
     </div>
@@ -69,7 +66,7 @@ const isNameValid = computed(() => validateName(name.value));
 
 const isPhoneNumberValid = computed(() => validatePhoneNumber(phoneNumber.value));
 
-const isFormValid = computed(() => isNameValid.value && isPhoneNumberValid.value && isOtherInformationValid.value);
+const isFormValid = computed(() => isNameValid.value && isPhoneNumberValid.value);
 
 const onInputChange = (field) => {
   if (field === "name") {
@@ -143,9 +140,9 @@ textarea,
 }
 
 textarea {
-  border-radius: 24px 8px 8px 24px;
-  min-height: 138px;
-  resize: vertical;
+  border-radius: 24px;
+  height: 191px;
+  resize: none;
 }
 
 textarea::-webkit-scrollbar {
@@ -175,18 +172,12 @@ textarea::-webkit-scrollbar-track:hover {
 .submit-btn {
   color: #fff;
   background-color: #0d72ff;
-  padding: 16px 0;
+  padding: 24px 0;
   font-weight: 600;
   width: 100%;
   line-height: 1rem;
   transition: all 0.3s ease;
   cursor: pointer;
-}
-
-.submit-btn--error {
-  background-color: #f2f2f2;
-  color: black;
-  pointer-events: none;
 }
 
 .error-message {

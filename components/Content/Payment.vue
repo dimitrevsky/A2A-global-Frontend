@@ -53,7 +53,7 @@ import Button from "../UI/Button.vue";
   font-size: calc(18.70313px + 2.47917vw);
   letter-spacing: -1px;
   margin-bottom: 24px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 120%;
   margin-bottom: 24px;
   text-align: center;
@@ -63,6 +63,7 @@ import Button from "../UI/Button.vue";
   font-size: calc(16px + (4 + 4 * 0.7) * (100vw - 375px) / 1920);
   font-weight: 400;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .payment__button {

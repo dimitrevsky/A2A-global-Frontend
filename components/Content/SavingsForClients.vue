@@ -68,7 +68,6 @@ onMounted(() => {
 
 .savings__title {
   max-width: 100%;
-  margin-bottom: calc(24px + 1vw);
   font-size: calc(21.35937px + 1.77083vw);
   letter-spacing: -1px;
   font-weight: 500;

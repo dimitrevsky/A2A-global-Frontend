@@ -50,10 +50,19 @@ const handleClick = (event) => {
   color: #2d84ff;
 }
 
+a {
+  transition: color .2s ease-in-out;
+  text-wrap: nowrap;
+}
+
 a:active,
 a:hover,
 a {
   text-decoration: none;
   color: var(--text-color);
+}
+
+a:hover {
+  color: #0d72ff;
 }
 </style>

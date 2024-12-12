@@ -47,7 +47,7 @@
 .benefits__businesses-item {
   max-width: 100%;
   background-color: #f2f2f2;
-  padding: 1.6vw;
+  padding: 2.4vw;
   padding-bottom: 40px;
   border-radius: 24px;
   text-wrap: nowrap;
