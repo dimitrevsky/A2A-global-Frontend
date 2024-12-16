@@ -12,9 +12,9 @@
             placeholder="What is your name?"
             v-model="name"
             @input="onInputChange('name')"
-            :class="{ 'input-invalid': isNameValid === false }"
+            :class="{ 'input-invalid': !isNameValid }"
           />
-          <p v-if="isSubmitAttempted && isNameValid === false" class="error-message">Пожалуйста, введите имя</p>
+          <p v-if="isSubmitAttempted && !isNameValid" class="error-message">Please enter a name</p>
         </div>
 
         <div class="main__form__input-group">
@@ -23,18 +23,16 @@
             placeholder="Phone number"
             v-model="phoneNumber"
             @input="onInputChange('phoneNumber')"
-            :class="{ 'input-invalid': isPhoneNumberValid === false }"
+            :class="{ 'input-invalid': !isPhoneNumberValid }"
           />
-          <p v-if="isSubmitAttempted && isPhoneNumberValid === false" class="error-message">
-            Пожалуйста, введите номер телефона
-          </p>
+          <p v-if="isSubmitAttempted && !isPhoneNumberValid" class="error-message">Please enter your phone number</p>
         </div>
 
         <div class="input-container">
           <textarea
             placeholder="Other information"
             v-model="otherInformation"
-            :class="{ 'input-invalid': isOtherInformationValid === false }"
+            :class="{ 'input-invalid': !isOtherInformationValid }"
             class="main__form__other-info"
           ></textarea>
         </div>
@@ -42,6 +40,14 @@
         <div>
           <input type="submit" value="Send" class="submit-btn" />
         </div>
+
+        <p
+          style="color: #0d72ff"
+          v-if="submissionStatus"
+          :class="submissionStatus.success ? 'success-message' : 'error-message'"
+        >
+          {{ submissionStatus.message }}
+        </p>
       </form>
     </div>
   </section>
@@ -49,23 +55,20 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { send } from "@emailjs/browser";
 
 const name = ref("");
 const phoneNumber = ref("");
 const otherInformation = ref("");
-
 const isSubmitAttempted = ref(false);
+const submissionStatus = ref(null);
 
 const validateName = (name) => /^[A-Za-zА-Яа-яЁё\s]+$/.test(name);
-
 const validatePhoneNumber = (phoneNumber) => /^\d+$/.test(phoneNumber);
 
 const isOtherInformationValid = computed(() => otherInformation.value.trim() !== "");
-
 const isNameValid = computed(() => validateName(name.value));
-
 const isPhoneNumberValid = computed(() => validatePhoneNumber(phoneNumber.value));
-
 const isFormValid = computed(() => isNameValid.value && isPhoneNumberValid.value);
 
 const onInputChange = (field) => {
@@ -76,11 +79,36 @@ const onInputChange = (field) => {
   }
 };
 
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
+  event.preventDefault();
   isSubmitAttempted.value = true;
 
-  if (!isFormValid.value) {
-    event.preventDefault();
+  if (!isFormValid.value) return;
+
+  try {
+    const serviceId = "A2A.global";
+    const templateId = "template_ebe1bnk";
+    const userId = "E0jz6DO7c3Iz5LPoA";
+
+    const response = await send(
+      serviceId,
+      templateId,
+      {
+        name: name.value,
+        phone_number: phoneNumber.value,
+        other_information: otherInformation.value,
+      },
+      userId
+    );
+
+    submissionStatus.value = { success: true, message: "Your message has been successfully sent!" };
+    console.debug("Message sent successfully", response);
+  } catch (error) {
+    submissionStatus.value = {
+      success: false,
+      message: "There was an error sending the message. Please try again.",
+    };
+    console.error("Error sending message", error);
   }
 };
 </script>

@@ -206,4 +206,10 @@ details > summary::before {
 details[open] > summary::before {
   transform: rotate(270deg);
 }
+
+@media (max-width: 1117px) {
+  #FAQ {
+    padding: 0 16px;
+  }
+}
 </style>
