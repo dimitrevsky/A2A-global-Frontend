@@ -55,7 +55,6 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { send } from "@emailjs/browser";
 
 const name = ref("");
 const phoneNumber = ref("");
@@ -64,17 +63,19 @@ const isSubmitAttempted = ref(false);
 const submissionStatus = ref(null);
 
 const validateName = (name) => /^[A-Za-zА-Яа-яЁё\s]+$/.test(name);
-// Убираем валидацию для номера телефона
+
+const validatePhoneNumber = (phoneNumber) => /^[a-zA-Z0-9\s\-\(\)\+\.\,]+$/.test(phoneNumber);
+
 const isOtherInformationValid = computed(() => otherInformation.value.trim() !== "");
 const isNameValid = computed(() => validateName(name.value));
-// Для phoneNumber не проверяем с помощью регулярных выражений
-const isFormValid = computed(() => isNameValid.value && phoneNumber.value.trim() !== "");
+const isPhoneNumberValid = computed(() => validatePhoneNumber(phoneNumber.value));
+
+const isFormValid = computed(() => isNameValid.value && isPhoneNumberValid.value && phoneNumber.value.trim() !== "");
 
 const onInputChange = (field) => {
   if (field === "name") {
     name.value = name.value.replace(/[^A-Za-zА-Яа-яЁё\s]/g, "");
   } else if (field === "phoneNumber") {
-    // Здесь не фильтруем символы, так как нам нужно разрешить ввод любых символов
   }
 };
 
@@ -111,7 +112,6 @@ const handleSubmit = async (event) => {
   }
 };
 </script>
-  
 
 <style scoped>
 .main__form-wrapper {
