@@ -25,7 +25,7 @@
             @input="onInputChange('phoneNumber')"
             :class="{ 'input-invalid': !isPhoneNumberValid }"
           />
-          <p v-if="isSubmitAttempted && !isPhoneNumberValid" class="error-message">Please enter your phone number</p>
+          <p v-if="isSubmitAttempted && !phoneNumber" class="error-message">Please enter your phone number</p>
         </div>
 
         <div class="input-container">
@@ -64,18 +64,17 @@ const isSubmitAttempted = ref(false);
 const submissionStatus = ref(null);
 
 const validateName = (name) => /^[A-Za-zА-Яа-яЁё\s]+$/.test(name);
-const validatePhoneNumber = (phoneNumber) => /^\d+$/.test(phoneNumber);
-
+// Убираем валидацию для номера телефона
 const isOtherInformationValid = computed(() => otherInformation.value.trim() !== "");
 const isNameValid = computed(() => validateName(name.value));
-const isPhoneNumberValid = computed(() => validatePhoneNumber(phoneNumber.value));
-const isFormValid = computed(() => isNameValid.value && isPhoneNumberValid.value);
+// Для phoneNumber не проверяем с помощью регулярных выражений
+const isFormValid = computed(() => isNameValid.value && phoneNumber.value.trim() !== "");
 
 const onInputChange = (field) => {
   if (field === "name") {
     name.value = name.value.replace(/[^A-Za-zА-Яа-яЁё\s]/g, "");
   } else if (field === "phoneNumber") {
-    phoneNumber.value = phoneNumber.value.replace(/\D/g, "");
+    // Здесь не фильтруем символы, так как нам нужно разрешить ввод любых символов
   }
 };
 
@@ -112,6 +111,7 @@ const handleSubmit = async (event) => {
   }
 };
 </script>
+  
 
 <style scoped>
 .main__form-wrapper {
