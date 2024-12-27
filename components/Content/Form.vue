@@ -22,10 +22,9 @@
             type="tel"
             placeholder="Phone number"
             v-model="phoneNumber"
-            @input="onInputChange('phoneNumber')"
             :class="{ 'input-invalid': !isPhoneNumberValid }"
           />
-          <p v-if="isSubmitAttempted && !isPhoneNumberValid" class="error-message">Please enter your phone number</p>
+          <p v-if="isSubmitAttempted && !phoneNumber" class="error-message">Please enter your phone number</p>
         </div>
 
         <div class="input-container">
@@ -55,7 +54,8 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { send } from "@emailjs/browser";
+
+import emailjs from "emailjs-com";
 
 const name = ref("");
 const phoneNumber = ref("");
@@ -64,18 +64,15 @@ const isSubmitAttempted = ref(false);
 const submissionStatus = ref(null);
 
 const validateName = (name) => /^[A-Za-zА-Яа-яЁё\s]+$/.test(name);
-const validatePhoneNumber = (phoneNumber) => /^\d+$/.test(phoneNumber);
 
 const isOtherInformationValid = computed(() => otherInformation.value.trim() !== "");
 const isNameValid = computed(() => validateName(name.value));
-const isPhoneNumberValid = computed(() => validatePhoneNumber(phoneNumber.value));
-const isFormValid = computed(() => isNameValid.value && isPhoneNumberValid.value);
+
+const isFormValid = computed(() => isNameValid.value && phoneNumber.value.trim() !== "");
 
 const onInputChange = (field) => {
   if (field === "name") {
     name.value = name.value.replace(/[^A-Za-zА-Яа-яЁё\s]/g, "");
-  } else if (field === "phoneNumber") {
-    phoneNumber.value = phoneNumber.value.replace(/\D/g, "");
   }
 };
 
@@ -90,7 +87,7 @@ const handleSubmit = async (event) => {
     const templateId = "template_ebe1bnk";
     const userId = "E0jz6DO7c3Iz5LPoA";
 
-    const response = await send(
+    const response = await emailjs.send(
       serviceId,
       templateId,
       {

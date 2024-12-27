@@ -1,7 +1,7 @@
 <template>
   <header class="header">
-    <div class="header__logo">
-      <img src="/assets/img/Logo.svg" alt="Logo" />
+    <div>
+      <img class="header__logo" src="/assets/img/Logo.png" alt="Logo" />
     </div>
 
     <Navigation class="header__nav" />
@@ -38,14 +38,12 @@ import Button from "./UI/Button.vue";
 }
 
 .header__logo {
-  font-weight: 800;
-  pointer-events: none;
-}
-
-.header__logo img {
   -webkit-user-drag: none;
   user-select: none;
+  max-width: 160px;
+  max-height: 58px;
 }
+
 .header__btn {
   background-color: rgba(13, 114, 255, 0.15);
   padding: 16px 56px;
@@ -62,7 +60,6 @@ import Button from "./UI/Button.vue";
   display: none;
 }
 
-
 @media (max-width: 1058px) {
   .header__nav {
     display: none;
@@ -78,6 +75,13 @@ import Button from "./UI/Button.vue";
 
   .header__sidebar {
     display: flex;
+  }
+}
+
+@media (max-width: 375px) {
+  .header__logo {
+    max-width: 128px;
+    max-height: 47px;
   }
 }
 </style>

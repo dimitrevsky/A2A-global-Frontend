@@ -173,6 +173,10 @@
   font-size: calc(18px + (6 + 6 * 0.7) * (100vw - 375px) / 1920);
 }
 
+.accordion__summary {
+  max-width: 90%;
+}
+
 details {
   position: relative;
   -webkit-appearance: none;
