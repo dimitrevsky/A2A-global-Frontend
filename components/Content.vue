@@ -1,22 +1,26 @@
 <template>
   <main class="main">
-    <Payment />
+    <WhoWeAre />
     <SavingsForClients />
-    <BenefitsForBusinesses />
+    <BenefitsForMerchants />
     <BenefitsForPayers />
+    <BenefitsForBanks />
     <Form />
-    <FAQ />
-    <footer class="main__footer">A2A.Global All rights reserved 2024(с)</footer>
+    <!-- FAQ -->
+    <footer class="main__footer">
+      A2A Global Inc (United States, Delaware) <br />
+      All rights reserved 2025 ©
+    </footer>
   </main>
 </template>
 
 <script setup>
-import BenefitsForBusinesses from "./Content/BenefitsForBusinesses.vue";
 import BenefitsForPayers from "./Content/BenefitsForPayers.vue";
-import FAQ from "./Content/FAQ.vue";
 import SavingsForClients from "./Content/SavingsForClients.vue";
 import Form from "./Content/Form.vue";
-import Payment from "./Content/Payment.vue";
+import WhoWeAre from "./Content/WhoWeAre.vue";
+import BenefitsForMerchants from "./Content/BenefitsForMerchants.vue";
+import BenefitsForBanks from "./Content/BenefitsForBanks.vue";
 </script>
 
 <style scoped>

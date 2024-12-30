@@ -1,13 +1,13 @@
 <template>
   <div class="header__nav">
     <div class="header__nav-item" @click="handleClick">
-      <a href="#BenefitsForBusinesses">Benefits for businesses</a>
+      <a href="#who">Who We Are</a>
     </div>
     <div class="header__nav-item" @click="handleClick">
-      <a href="#BenefitsForPayers">Benefits for Payers</a>
+      <a href="#banks">What We Offer For Banks</a>
     </div>
     <div class="header__nav-item" @click="handleClick">
-      <a href="#FAQ">FAQ</a>
+      <a href="#merchants">What We Offer For Merchants</a>
     </div>
   </div>
 </template>
@@ -51,8 +51,9 @@ const handleClick = (event) => {
 }
 
 a {
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
   text-wrap: nowrap;
+  font-size: 24px;
 }
 
 a:active,
@@ -65,4 +66,6 @@ a {
 a:hover {
   color: #0d72ff;
 }
+
+
 </style>

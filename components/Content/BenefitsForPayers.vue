@@ -10,15 +10,15 @@
       </div>
       <div class="benefits__payers-item">
         <h1 class="benefits__payers-item-value">&lt;0,05%</h1>
-        <p class="benefits__payers-item-description">Higher conversion</p>
+        <p class="benefits__payers-item-description">FX Fees</p>
       </div>
       <div class="benefits__payers-item">
-        <h1 class="benefits__payers-item-value">0</h1>
-        <p class="benefits__payers-item-description">Integration cost</p>
+        <h1 class="benefits__payers-item-value">0 Hassle</h1>
+        <p class="benefits__payers-item-description">No card, only mobile phone</p>
       </div>
       <div class="benefits__payers-item">
-        <h1 class="benefits__payers-item-value">0,001 sec</h1>
-        <p class="benefits__payers-item-description">Instant payments</p>
+        <h1 class="benefits__payers-item-value">100%</h1>
+        <p class="benefits__payers-item-description">Secure: 2FA, no card number exposed</p>
       </div>
     </div>
   </section>

@@ -1,6 +1,6 @@
 <template>
     <button @click="handleButtonClick">
-      <a href="#Form">GET</a>
+      <a href="#Form">Join A2A Global Network</a>
     </button>
 </template>
 

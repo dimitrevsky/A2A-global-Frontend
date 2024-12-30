@@ -1,8 +1,8 @@
 <template>
   <section class="main__form-wrapper" id="Form">
     <div>
-      <h1>Future of payments happening now</h1>
-      <p>Fill in the form to join the A2A.Global community and our founders will contact you</p>
+      <h1>Join our A2A Global Network of banks and merchants</h1>
+      <p>Fill in the form, and our founders will contact you</p>
     </div>
     <div>
       <form @submit="handleSubmit" class="main__form">
@@ -37,7 +37,7 @@
         </div>
 
         <div>
-          <input type="submit" value="Send" class="submit-btn" />
+          <input type="submit" value="Join" class="submit-btn" />
         </div>
 
         <p

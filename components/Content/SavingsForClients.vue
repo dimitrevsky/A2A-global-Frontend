@@ -1,7 +1,7 @@
 <template>
   <section class="savings">
     <div class="savings__title">
-      <p>Cumulative savings for our clients as of today</p>
+      <p>That’s how much we saved  for our global merchants:</p>
     </div>
     <div class="savings__money-display">
       <div class="savings__digit-container">
@@ -62,6 +62,7 @@ onMounted(() => {
 .savings {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
   max-width: 100%;
 }
@@ -70,8 +71,8 @@ onMounted(() => {
   max-width: 100%;
   font-size: calc(21.35937px + 1.77083vw);
   letter-spacing: -1px;
-  font-weight: 500;
-  text-align: center;
+  max-width: 700px;
+  font-weight: 600;
 }
 
 .savings__title > p {

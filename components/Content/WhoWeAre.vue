@@ -1,19 +1,18 @@
 <template>
-  <div class="payment">
-    <div class="payment__video-wrapper">
-      <video width="auto" height="100%" class="payment__video" playsinline autoplay muted loop>
+  <div class="who_we_are">
+    <div class="who_we_are__video-wrapper">
+      <video width="auto" height="100%" class="who_we_are__video" playsinline autoplay muted loop>
         <source src="/assets/video/animation1.mp4" />
       </video>
     </div>
-    <div class="payment__info">
-      <div class="payment__info__title">
-        Instant payments <br />
-        From account to account <br />
-        No hassle!
+    <div class="who_we_are__info">
+      <div class="who_we_are__info__title" id="who">
+        <p>Who we are</p>
       </div>
-      <div class="payment__info__text">Accept payments from anywhere in the world with just one click.</div>
-      <div>
-        <Button class="payment__button" />
+      <div class="who_we_are__info__text">
+        <p>We build an alternative payment method for global merchants</p>
+        <p>We believe that account-to-account payments (A2A) should be simple, low-cost, secure and instant</p>
+        <p>We connect merchants with our global network of banking partners (A2A Global Network)</p>
       </div>
     </div>
   </div>
@@ -24,7 +23,7 @@ import Button from "../UI/Button.vue";
 </script>
 
 <style scoped>
-.payment {
+.who_we_are {
   position: relative;
   max-width: 100%;
   display: flex;
@@ -33,7 +32,7 @@ import Button from "../UI/Button.vue";
   gap: 40px;
 }
 
-.payment__video-wrapper {
+.who_we_are__video-wrapper {
   position: relative;
   max-width: 100%;
   height: 544px;
@@ -41,7 +40,7 @@ import Button from "../UI/Button.vue";
   border-radius: 24px;
 }
 
-.payment__video {
+.who_we_are__video {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -49,7 +48,7 @@ import Button from "../UI/Button.vue";
   border-radius: 24px;
 }
 
-.payment__info__title {
+.who_we_are__info__title {
   font-size: calc(18.70313px + 2.47917vw);
   letter-spacing: -1px;
   margin-bottom: 24px;
@@ -59,14 +58,19 @@ import Button from "../UI/Button.vue";
   text-align: center;
 }
 
-.payment__info__text {
+.who_we_are__info__text {
   font-size: calc(16px + (4 + 4 * 0.7) * (100vw - 375px) / 1920);
-  font-weight: 400;
+  font-weight: 500;
+  max-width: 683px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
   margin-bottom: 40px;
   text-align: center;
+  color: #727272;
 }
 
-.payment__button {
+.who_we_are__button {
   color: #ffffff;
   width: 160px;
   background-color: rgb(13, 114, 255);
@@ -76,7 +80,7 @@ import Button from "../UI/Button.vue";
   justify-self: center;
 }
 
-.payment__info {
+.who_we_are__info {
   display: flex;
   flex-direction: column;
   align-items: center;
