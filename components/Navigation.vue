@@ -41,7 +41,6 @@ const handleClick = (event) => {
 
 .header__nav-item {
   cursor: pointer;
-  font-size: 18px;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
@@ -51,9 +50,9 @@ const handleClick = (event) => {
 }
 
 a {
-  transition: color 0.2s ease-in-out;
   text-wrap: nowrap;
-  font-size: 24px;
+  font-size: inherit;
+  transition: color 0.2s ease-in-out;
 }
 
 a:active,
@@ -66,6 +65,4 @@ a {
 a:hover {
   color: #0d72ff;
 }
-
-
 </style>

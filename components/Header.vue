@@ -29,8 +29,8 @@ import Button from "./UI/Button.vue";
   top: 0;
   width: 100%;
   padding: 24px 64px;
-  font-size: 24px;
   display: flex;
+  font-size: 24px;
   justify-content: space-between;
   gap: 22px;
   background-color: #fff;
@@ -72,7 +72,25 @@ import Button from "./UI/Button.vue";
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 1419px) {
+@media (max-width: 1611px) {
+  .header__nav {
+    font-size: calc(22px + (2 + 2 * 0.7) * (100vw - 375px) / 1920);
+    gap: 16px;
+    letter-spacing: -1px;
+  }
+
+  .header__conteiner__nav {
+    left: 45%;
+  }
+}
+
+@media (max-width: 1385px) {
+  .header__nav {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1337px) {
   .header__nav {
     display: none;
   }

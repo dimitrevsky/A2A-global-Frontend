@@ -1,7 +1,7 @@
 <template>
   <section class="benefits__merchants" id="merchants">
     <div class="benefits__merchants-title">
-      <p class="benefits__merchants-title-text">Benefits for merchants</p>
+      <p class="benefits__merchants-title-text">Benefits For Merchants</p>
     </div>
     <div class="benefits__merchants-grid">
       <div class="benefits__merchants-item">

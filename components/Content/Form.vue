@@ -1,7 +1,7 @@
 <template>
   <section class="main__form-wrapper" id="Form">
     <div>
-      <h1>Join our A2A Global Network of banks and merchants</h1>
+      <h1>Join our A2A Global Network of banks and Merchants</h1>
       <p>Fill in the form, and our founders will contact you</p>
     </div>
     <div>
