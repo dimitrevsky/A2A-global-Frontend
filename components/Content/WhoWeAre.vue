@@ -7,7 +7,7 @@
     </div>
     <div class="who_we_are__info">
       <div class="who_we_are__info__title" id="who">
-        <p>Who we are</p>
+        <p>Who We Are</p>
       </div>
       <div class="who_we_are__info__text">
         <p>We build an alternative payment method for global merchants</p>
